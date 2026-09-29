@@ -1,12 +1,12 @@
-# ========================================================
-#       Tweak Suite - PowerShell Interactive Utility
-# ========================================================
+# Electronic Encoding Setup
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 # التأكد من تشغيل السكربت كمسؤول (Administrator)
 $isAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 if (-not $isAdmin) {
     Write-Host "======================================================" -ForegroundColor Red
-    Write-Host " [!] يرجى تشغيل السكربت كمسؤول (Run as Administrator)!" -ForegroundColor Red
+    Write-Host " [!] Please run this script as Administrator!" -ForegroundColor Red
+    Write-Host " [!] يرجى تشغيل السكربت كمسؤول!" -ForegroundColor Red
     Write-Host "======================================================" -ForegroundColor Red
     Pause
     Exit
@@ -21,7 +21,7 @@ function Show-Menu {
     Write-Host " [2] تحسين أداء كرت الشاشة (GPU & Power Plan)" -ForegroundColor Green
     Write-Host " [3] تحسين شبكة الإنترنت والـ Ping (Network Tweak)" -ForegroundColor Green
     Write-Host " [4] تفريغ ذاكرة الرام والكاش (RAM Cleaner)" -ForegroundColor Green
-    Write-Host " [5] تطبيق جميع التحسينات دفعة واحدة (Apply All)" -ForegroundColor Magnitude
+    Write-Host " [5] تطبيق جميع التحسينات دفعة واحدة (Apply All)" -ForegroundColor Magenta
     Write-Host " [0] خروج (Exit)" -ForegroundColor Red
     Write-Host "======================================================" -ForegroundColor Cyan
 }
